@@ -45,4 +45,9 @@
 		android:targetClass="com.custom.ambient.display.DozeSettings" />
     </Preference>
 
+    <CheckBoxPreference
+	android:key="hbm"
+	android:summary="@string/hbm_mode_summary"
+	android:title="@string/hbm_mode_title" />
+
 </PreferenceScreen>

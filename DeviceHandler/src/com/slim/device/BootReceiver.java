@@ -27,6 +27,7 @@ import android.preference.PreferenceManager;
 import com.slim.device.KernelControl;
 import com.slim.device.settings.ScreenOffGesture;
 import com.slim.device.settings.SliderSettings;
+import com.slim.device.settings.HBMModeSwitch;
 import com.slim.device.util.FileUtils;
 
 import java.io.File;
@@ -42,6 +43,7 @@ public class BootReceiver extends BroadcastReceiver {
                 KernelControl.enableGestures(
                         screenOffGestureSharedPreferences.getBoolean(
                         ScreenOffGesture.PREF_GESTURE_ENABLE, true));
+		HBMModeSwitch.restore(context);
             }
 
             // Disable slider settings if needed

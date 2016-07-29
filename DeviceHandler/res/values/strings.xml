@@ -110,4 +110,8 @@
     <string name="notification_slider_mode_none">None</string>
     <string name="notification_slider_mode_vibrate">Vibrate</string>
     <string name="notification_slider_mode_ring">Ring</string>
+
+    <!-- High-Brightness mode -->
+    <string name="hbm_mode_summary">Increase maximum brightness for better visibility in sunlight</string>
+    <string name="hbm_mode_title">High brightness mode</string>
 </resources>

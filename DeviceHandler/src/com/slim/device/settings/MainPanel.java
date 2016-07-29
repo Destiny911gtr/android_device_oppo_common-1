@@ -17,15 +17,32 @@
 package com.slim.device.settings;
 
 import android.os.Bundle;
+import android.content.res.Resources;
+import android.content.Intent;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceCategory;
+import android.preference.PreferenceScreen;
+import android.preference.TwoStatePreference;
+import android.provider.Settings;
+import android.util.Log;
 import com.slim.device.R;
 
-public class MainPanel extends PreferenceActivity {
+public class MainPanel extends PreferenceActivity implements Preference.OnPreferenceChangeListener {
+
+    public static final String KEY_HBM_SWITCH = "hbm";
+
+    private TwoStatePreference mHBMModeSwitch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         addPreferencesFromResource(R.xml.main_panel);
+
+	mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
+        mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
+        mHBMModeSwitch.setChecked(HBMModeSwitch.isEnabled(this));
+        mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch());
     }
 }
