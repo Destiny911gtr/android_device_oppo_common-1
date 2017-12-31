@@ -22,7 +22,7 @@ import android.content.SharedPreferences;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
-
+import com.slim.device.MainPanel.settings;
 import com.slim.device.util.FileUtils;
 
 public class HBMModeSwitch implements OnPreferenceChangeListener {

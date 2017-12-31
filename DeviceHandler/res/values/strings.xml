@@ -111,7 +111,15 @@
     <string name="notification_slider_mode_vibrate">Vibrate</string>
     <string name="notification_slider_mode_ring">Ring</string>
 
-    <!-- High-Brightness mode -->
+    <!-- Panel modes -->
     <string name="hbm_mode_summary">Increase maximum brightness for better visibility in sunlight</string>
     <string name="hbm_mode_title">High brightness mode</string>
+    <string name="srgb_mode_summary"></string>
+    <string name="srgb_mode_title">sRGB mode</string>
+    <string name="night_mode_summary"></string>
+    <string name="night_mode_title">Neutral color mode</string>
+    <string name="oneplus_mode_summary"></string>
+    <string name="oneplus_mode_title">Soft color mode</string>
+    <string name="off_mode_title">Off</string>
+    <string name="tile_hbm_mode">High Brithness Mode</string>
 </resources>
