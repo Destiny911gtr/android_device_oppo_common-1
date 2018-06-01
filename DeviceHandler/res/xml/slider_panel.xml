@@ -22,26 +22,26 @@
         android:summary="@string/button_swap_summary" />
 
     <PreferenceCategory
-        android:title="@string/notification_slider_title">
+        android:title="@string/button_panel_title">
 
         <ListPreference
             android:key="keycode_top_position"
-            android:dialogTitle="@string/action"
-            android:title="@string/top_position"
+            android:dialogTitle="@string/notification_slider_selection_dialog_title"
+            android:title="@string/notification_slider_top_position"
             android:entries="@array/notification_slider_action_entries"
             android:entryValues="@array/notification_slider_action_entry_values" />
 
         <ListPreference
             android:key="keycode_middle_position"
-            android:dialogTitle="@string/action"
-            android:title="@string/middle_position"
+            android:dialogTitle="@string/notification_slider_selection_dialog_title"
+            android:title="@string/notification_slider_middle_position"
             android:entries="@array/notification_slider_action_entries"
             android:entryValues="@array/notification_slider_action_entry_values" />
 
         <ListPreference
             android:key="keycode_bottom_position"
-            android:dialogTitle="@string/action"
-            android:title="@string/bottom_position"
+            android:dialogTitle="@string/notification_slider_selection_dialog_title"
+            android:title="@string/notification_slider_bottom_position"
             android:entries="@array/notification_slider_action_entries"
             android:entryValues="@array/notification_slider_action_entry_values" />
 

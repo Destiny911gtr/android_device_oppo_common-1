@@ -50,8 +50,6 @@ public class ScreenOffGesture extends PreferenceFragment implements
         OnPreferenceChangeListener, OnPreferenceClickListener,
         ShortcutPickerHelper.OnPickListener {
 
-    private static final String SETTINGS_METADATA_NAME = "com.android.settings";
-
     public static final String GESTURE_SETTINGS = "screen_off_gesture_settings";
 
     public static final String PREF_GESTURE_ENABLE = "enable_gestures";
@@ -93,21 +91,10 @@ public class ScreenOffGesture extends PreferenceFragment implements
 
         // Before we start filter out unsupported options on the
         // ListPreference values and entries
-        PackageManager pm = getActivity().getPackageManager();
-        Resources settingsResources = null;
-        try {
-            settingsResources = pm.getResourcesForApplication(SETTINGS_METADATA_NAME);
-        } catch (Exception e) {
-            return;
-        }
         sFinalActionDialogArray = new FilteredDeviceFeaturesArray();
         sFinalActionDialogArray = DeviceUtils.filterUnsupportedDeviceFeatures(getActivity(),
-                settingsResources.getStringArray(
-                        settingsResources.getIdentifier(SETTINGS_METADATA_NAME
-                        + ":array/shortcut_action_screen_off_values", null, null)),
-                settingsResources.getStringArray(
-                        settingsResources.getIdentifier(SETTINGS_METADATA_NAME
-                        + ":array/shortcut_action_screen_off_entries", null, null)));
+                getActivity().getResources().getStringArray(R.array.shortcut_action_screen_off_values),
+                getActivity().getResources().getStringArray(R.array.shortcut_action_screen_off_entries));
 
         // Attach final settings screen.
         reloadSettings();

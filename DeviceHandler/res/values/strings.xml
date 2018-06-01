@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2014 SlimRoms Project
+<!--
+     Copyright (C) 2013-2014 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,44 +16,94 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- General strings -->
+    <string name="gestures_title">OnePlus Hub</string>
+    <string name="gestures_dashboard_summary">Extra stuff specific to OnePlus devices</string>
+
+    <!-- O-Touch settings -->
+    <string name="backpad_panel_title" translatable="false">O-Touch</string>
+
+    <string name="touchpad_enable_title">Enable O-Touch</string>
+    <string name="touchpad_enable_summary">Rear touchpad to navigate the phone</string>
+    <string name="touchpad_long_press_title">Long press to launch camera</string>
+    <string name="touchpad_long_press_summary">Long press on the touchpad will launch the camera application</string>
+    <string name="touchpad_double_tap_title">Double tap to capture</string>
+    <string name="touchpad_double_tap_summary">While in camera, double tap to capture image</string>
+
+    <!-- Gesture shortcuts -->
     <string name="dlg_ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="reset">Reset</string>
     <string name="reset_message">Reset all entries to default?</string>
+    <string name="alert_category_title">Alerts</string>
+    <string name="action_category_title">Actions</string>
 
-    <string name="screen_off_gesture_title">Screen off gestures</string>
-    <string name="screen_off_gesture_summary">Gesture specific to OnePlus devices</string>
+    <!-- Screen-off gestures -->
+    <string name="screen_off_gestures_title">Screen-Off Gestures</string>
+    <string name="screen_off_gestures_summary">Customize Screen-Off gestures</string>
+
+    <string name="enable_gestures_title">Enable Gestures</string>
+    <string name="enable_gestures_summary">Customize screen-off gestures for different funtions</string>
+    <string name="gesture_arrow_down_title">Draw V</string>
+    <string name="gesture_arrow_left_title">Draw &#60;</string>
+    <string name="gesture_arrow_right_title">Draw &#62;</string>
+    <string name="gesture_arrow_up_title">Draw A</string>
+    <string name="gesture_circle_title">Draw O</string>   
+    <string name="gesture_double_swipe_title">Draw ||</string>   
+
     <string name="group_applications">Applications</string>
-    <string name="select_custom_app_title">Select custom application</string>
+    <string name="select_custom_app_title">Choose activity</string>
+    <string name="shortcut_action_app">Launch Application</string>
+    <string name="shortcut_action_camera">Launch Camera</string>
+    <string name="shortcut_action_media_next">Skip Media</string>
+    <string name="shortcut_action_media_play_pause">Play/Pause Media</string>
+    <string name="shortcut_action_media_previous">Previous Media</string>
+    <string name="shortcut_action_ring_silent">Silent</string>
+    <string name="shortcut_action_ring_vib">Vibrate Only Mode</string>
+    <string name="shortcut_action_ring_vib_silent">Ring/Vibrate/Silence</string>
+    <string name="shortcut_action_torch">Turn On Flashlight</string>
+    <string name="shortcut_action_wake_device">Turn Screen On</string>
+    <string name="shortcut_action_none">None</string>
 
-    <string name="enable_gestures_title">Enable gestures</string>
-    <string name="enable_gestures_summary">Enable screen off gestures</string>
-    <string name="gestures_title">Gestures</string>
-    <string name="gesture_arrow_down_title">Arrow down</string>
-    <string name="gesture_arrow_left_title">Arrow left</string>
-    <string name="gesture_arrow_right_title">Arrow right</string>
-    <string name="gesture_arrow_up_title">Arrow up</string>
-    <string name="gesture_circle_title">Circle</string>
-    <string name="gesture_double_swipe_title">Double finger swipe down</string>
-    <string name="gesture_double_tap_title">Double tap</string>
+    <!-- O-Click settings -->
+    <string name="oclick_panel_title" translatable="false">O-Click</string>
 
-     <!-- Notification slider -->
-    <string name="notification_slider_title">Notification slider</string>
-    <string name="notification_slider_summary">Slider specific to OnePlus devices</string>
-    <string name="action">Action</string>
+    <string name="oclick_connect_string">Connect</string>
+    <string name="oclick_disconnect_string">Disconnect</string>
+    <string name="oclick_summary_connected">Connected to O-Click</string>
+    <string name="oclick_summary_paired">O-Click paired, but disconnected</string>
+    <string name="oclick_dialog_title" translatable="false">O-Click</string>
+    <string name="oclick_dialog_connecting_message">Connecting to O-Click\u2026\nPress the O-Click button to speed up discovery.</string>
+    <string name="oclick_take_snapshot_title">Remote camera shutter</string>
+    <string name="oclick_take_snapshot_summary">Single click to take picture</string>
+    <string name="oclick_find_my_phone_title">Phone locator</string>
+    <string name="oclick_find_my_phone_summary">Double click to find phone</string>
+    <string name="oclick_fence_title">Proximity alert</string>
+    <string name="oclick_fence_summary">Alert when not near phone</string>
+    <string name="oclick_disconnect_alert_title">Out of range alert</string>
+    <string name="oclick_disconnect_alert_summary">Alert when outside of reach</string>
 
-    <string name="top_position">Top position</string>
-    <string name="middle_position">Middle position</string>
-    <string name="bottom_position">Bottom position</string>
-    <string name="total_silence">Total silence</string>
-    <string name="alarms_only">Alarms only</string>
-    <string name="priority_only">Priority only</string>
-    <string name="none">All notifications</string>
-    <string name="vibrate">Vibrate</string>
-    <string name="ring">Ring</string>
+    <!-- O-Click notification -->
+    <string name="oclick_locator_notification_title">O-Click phone locator</string>
+    <string name="oclick_locator_notification_text">Locator alert is playing. Tap to dismiss</string>
+    <string name="oclick_notification_title_connected">O-Click connected</string>
+    <string name="oclick_notification_title_disconnected">O-Click disconnected</string>
+    <string name="oclick_notification_content_disconnected">Press the O-Click button to reconnect</string>
 
-    <string name="button_swap_title">Swap buttons</string>
+    <!-- Button settings -->
+    <string name="button_panel_title">Alert Slider</string>
+    <string name="buttons_dashboard_summary">Alert Slider settings</string>
+    <string name="button_swap_title">Swap Buttons</string>
     <string name="button_swap_summary">Swap the order of recents and back buttons</string>
 
+    <!-- Notification slider -->
+    <string name="notification_slider_selection_dialog_title">Action</string>
+    <string name="notification_slider_top_position">Top position</string>
+    <string name="notification_slider_middle_position">Middle position</string>
+    <string name="notification_slider_bottom_position">Bottom position</string>
+    <string name="notification_slider_mode_total_silence">Total silence</string>
+    <string name="notification_slider_mode_alarms_only">Alarms only</string>
+    <string name="notification_slider_mode_priority_only">Priority only</string>
+    <string name="notification_slider_mode_none">None</string>
+    <string name="notification_slider_mode_vibrate">Vibrate</string>
+    <string name="notification_slider_mode_ring">Ring</string>
 </resources>
