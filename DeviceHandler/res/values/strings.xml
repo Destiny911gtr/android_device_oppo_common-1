@@ -95,6 +95,10 @@
     <string name="button_swap_title">Swap Buttons</string>
     <string name="button_swap_summary">Swap the order of recents and back buttons</string>
 
+    <!-- Doze -->
+    <string name="ambient_trigger">Ambient Display Triggers</string>
+    <string name="ambient_trigger_summary">Configure different methods to trigger ambient display</string>
+
     <!-- Notification slider -->
     <string name="notification_slider_selection_dialog_title">Action</string>
     <string name="notification_slider_top_position">Top position</string>

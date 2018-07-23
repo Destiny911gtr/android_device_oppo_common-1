@@ -36,4 +36,13 @@
                 android:targetClass="com.slim.device.settings.SliderSettings" />
     </Preference>
 
+    <Preference
+        android:key="ambient_trigger"
+        android:title="@string/ambient_trigger"
+        android:summary="@string/ambient_trigger_summary">
+            <intent
+                android:targetPackage="com.custom.ambient.display"
+		android:targetClass="com.custom.ambient.display.DozeSettings" />
+    </Preference>
+
 </PreferenceScreen>
