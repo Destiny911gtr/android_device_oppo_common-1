@@ -23,6 +23,7 @@ import android.content.SharedPreferences;
 import android.service.quicksettings.TileService;
 import com.slim.device.util.FileUtils;
 import com.slim.device.HBMModeSwitch;
+import com.slim.device.settings.MainPanel;
 import android.preference.PreferenceManager;
 
 @TargetApi(24)
@@ -56,7 +57,7 @@ public class HBMModeTileService extends TileService {
     public void onClick() {
         super.onClick();
 	SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        final boolean enabled = HBMModeSwitch.isCurrentlyEnabled(this);
+        final boolean enabled = HBMModeSwitch.isEnabled(this);
         FileUtils.writeValue(HBMModeSwitch.getFile(), enabled ? "0" : "1");
         sharedPrefs.edit().putBoolean(MainPanel.KEY_HBM_SWITCH, enabled ? false : true).commit();
     }

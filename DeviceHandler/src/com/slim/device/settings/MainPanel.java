@@ -42,6 +42,7 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.util.Log;
+import com.slim.device.R;
 import com.slim.device.util.FileUtils;
 import com.slim.device.HBMModeSwitch;
 import com.slim.device.SRGBModeSwitch;
@@ -51,6 +52,7 @@ import com.slim.device.NightModeSwitch;
 public class MainPanel extends PreferenceActivity implements RadioGroup.OnCheckedChangeListener {
 
     private RadioGroup mRadioGroup;
+    private TwoStatePreference mHBMModeSwitch;
 
     public static final String KEY_SRGB_SWITCH = "srgb";
     public static final String KEY_HBM_SWITCH = "hbm";
@@ -65,7 +67,7 @@ public class MainPanel extends PreferenceActivity implements RadioGroup.OnChecke
 
         mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
         mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
-        mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this.getContext()));
+        mHBMModeSwitch.setChecked(HBMModeSwitch.isEnabled(this));
         mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch());
 
 	mRadioGroup = (RadioGroup) findViewById(R.id.radio_group);
@@ -87,32 +89,32 @@ public class MainPanel extends PreferenceActivity implements RadioGroup.OnChecke
         SharedPreferences.Editor edit = sharedPrefs.edit();
         if (checkedId == R.id.srgb_mode) {
             FileUtils.writeValue(OneplusModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_ONEPLUS_SWITCH, false);
+            edit.putBoolean(MainPanel.KEY_ONEPLUS_SWITCH, false);
             FileUtils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
+            edit.putBoolean(MainPanel.KEY_NIGHT_SWITCH, false);
             FileUtils.writeValue(SRGBModeSwitch.getFile(), "1");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, true);
+            edit.putBoolean(MainPanel.KEY_SRGB_SWITCH, true);
         } else if (checkedId == R.id.oneplus_mode) {
             FileUtils.writeValue(SRGBModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
+            edit.putBoolean(MainPanel.KEY_SRGB_SWITCH, false);
             FileUtils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
+            edit.putBoolean(MainPanel.KEY_NIGHT_SWITCH, false);
             FileUtils.writeValue(OneplusModeSwitch.getFile(), "1");
-            edit.putBoolean(DeviceSettings.KEY_ONEPLUS_SWITCH, true);
+            edit.putBoolean(MainPanel.KEY_ONEPLUS_SWITCH, true);
         } else if (checkedId == R.id.night_mode) {
             FileUtils.writeValue(SRGBModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
+            edit.putBoolean(MainPanel.KEY_SRGB_SWITCH, false);
             FileUtils.writeValue(OneplusModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_ONEPLUS_SWITCH, false);
+            edit.putBoolean(MainPanel.KEY_ONEPLUS_SWITCH, false);
             FileUtils.writeValue(NightModeSwitch.getFile(), "1");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, true);
+            edit.putBoolean(MainPanel.KEY_NIGHT_SWITCH, true);
         } else if (checkedId == R.id.off_mode) {
             FileUtils.writeValue(OneplusModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_ONEPLUS_SWITCH, false);
+            edit.putBoolean(MainPanel.KEY_ONEPLUS_SWITCH, false);
             FileUtils.writeValue(NightModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_NIGHT_SWITCH, false);
+            edit.putBoolean(MainPanel.KEY_NIGHT_SWITCH, false);
             FileUtils.writeValue(SRGBModeSwitch.getFile(), "0");
-            edit.putBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
+            edit.putBoolean(MainPanel.KEY_SRGB_SWITCH, false);
         }
         edit.commit();
     }

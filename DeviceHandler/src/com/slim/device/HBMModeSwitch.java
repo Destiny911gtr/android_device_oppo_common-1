@@ -22,12 +22,19 @@ import android.content.SharedPreferences;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
-import com.slim.device.MainPanel.settings;
+import com.slim.device.settings.MainPanel;
 import com.slim.device.util.FileUtils;
 
 public class HBMModeSwitch implements OnPreferenceChangeListener {
 
     private static final String FILE = "/sys/devices/virtual/graphics/fb0/hbm";
+
+    public static String getFile() {
+        if (FileUtils.fileWritable(FILE)) {
+            return FILE;
+        }
+        return null;
+    }
 
     public static boolean isSupported() {
         return FileUtils.fileWritable(FILE);
